@@ -29,3 +29,4 @@ Since Wynncraft has an API limit of 750 requests/30 minutes, it's advised that y
 
 - World scans (Tracks specified worlds)
 - Optimized tracking (Ignores offline players, might use more CPU)
+- Enabling the use of config.yaml, making it easier to use the jar and have custom request interval.
