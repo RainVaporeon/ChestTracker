@@ -1,6 +1,5 @@
 # ChestTracker
 
-known things: run.bat doesn't work, cba fixing
 
 ### Tracks specified Wynncraft player's chest count.
 
