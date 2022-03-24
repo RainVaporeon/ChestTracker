@@ -7,13 +7,13 @@ public class DataHandlerSpirit {
         NotificationSpirit notify = new NotificationSpirit();
         if (data[1] == JSONObject.NULL) {
             System.out.println("Player " + player + " is offline :: Chest opened: " + data[0] + " :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
-            if(config.isTrackOnline()) {
-                notify.send("Player " + player + " is offline :: Chest opened: " + data[0] + " :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+            if(config.isTrackOffline()) {
+                notify.send("Player " + player + " has logged off!");
             }
         } else {
             System.out.println("Player " + player + " is online on " + data[1] + " :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
             if(config.isTrackOnline()) {
-                notify.send("Player " + player + " is online on " + data[1] + " :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+                notify.send("Player " + player + " is online on " + data[1] + "!");
             }
         }
                     /*

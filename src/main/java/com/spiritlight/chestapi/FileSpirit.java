@@ -11,10 +11,13 @@ public class FileSpirit {
                     interval: 300
                     # List of users to track
                     players: ["OriTheSpirit", "Salted"]
-                    # Should it notify you when a player's logs on / off?
+                    # Should it notify you when a player logged on?
                     trackOnline: false
+                    # Should it notify you when a player logged off?
+                    trackOffline = false
                     # Should it notify you when a player reaches 30/60/90/120 chests?
-                    trackChests: true"""); // Create new config
+                    trackChests: true
+                    """); // Create new config
             newcfg.close();
             System.out.println("A new config has been created.");
         } catch (IOException e) {
