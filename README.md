@@ -14,8 +14,9 @@ Tracks specified players' chest count, on an interval of 5 minutes.
 
 ## How to use
 
-ChestTracker can be used with the command
-`java -jar ChestAPI-1.1.0.jar` or just open the jar itself.
+ChestTracker can be used with the command `java -jar ChestAPI-1.1.0.jar`
+
+If you do not know how to execute that, place the `run.bat` with it.
 
 As of ChestTracker 1.1.0, it will generate config.yaml when you use it.
 
