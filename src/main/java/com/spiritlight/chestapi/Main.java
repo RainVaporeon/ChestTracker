@@ -1,5 +1,6 @@
 package com.spiritlight.chestapi;
 import java.io.IOException;
+import org.json.JSONObject;
 /*
 Wynncraft API Rate-limits
 Limit: 750/30 minutes per-IP (Player Statistics API)
@@ -34,10 +35,10 @@ public class Main {
                         playerData[i][2] = data[1]; // Last World
                         playerData[i][3] = 0;
                     }
-                    if (data[1] == null) {
-                        System.out.println("User " + args[i] + " is offline :: Chest opened: " + data[0] + " Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+                    if (data[1] == JSONObject.NULL) {
+                        System.out.println("Player " + args[i] + " is offline :: Chest opened: " + data[0] + " Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
                     } else {
-                        System.out.println("User " + args[i] + " is online on " + data[1] + "  :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+                        System.out.println("Player " + args[i] + " is online on " + data[1] + "  :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
                     }
                     /*
                     if ((int) data[3] == 429) {
@@ -61,9 +62,9 @@ public class Main {
                         playerData[i][3] = 4;
                     }
                     if (!(playerData[i][2].equals(data[1])) && ran) {
-                        if(data[1] == null) {
+                        if(data[1] == JSONObject.NULL) {
                             System.out.println("User " + args[i] + " has logged off!");
-                        } else if (playerData[i][2] == null ) {
+                        } else if (playerData[i][2] == JSONObject.NULL ) {
                             System.out.println("User " + args[i] + " has logged on at " + data[1]);
                         } else {
                             System.out.println("User " + args[i] + " changed world! " + playerData[i][2] + " -> " + data[1]);
