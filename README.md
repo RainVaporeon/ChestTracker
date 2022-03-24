@@ -34,7 +34,7 @@ trackOnline: false
 trackChests: true
 ```
 
-##Info when using
+## Info when using
 
 Since Wynncraft has an API limit of 750 requests/30 minutes, it's advised that you do not supply over 120 players at once (It'll warn you when you reach 120, and you may get ratelimited at 150+)
 
