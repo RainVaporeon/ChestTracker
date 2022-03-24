@@ -9,13 +9,29 @@ Tracks specified players' chest count, on an interval of 5 minutes.
 ## Features
 
 - Tracks player current world, total chest count (and increased chests)
-- Sends you a push notification whenever a tracked player has opened a specified amount of chests (50, 100, 150, 200)
+- Sends you a push notification whenever a tracked player has opened a specified amount of chests (30, 60, 90, 120)
 - Logs server switches
 
 ## How to use
 
 ChestTracker can be used with the command
-`java -jar ChestAPI-1.0.1.jar player1 player2 ...`
+`java -jar ChestAPI-1.1.0.jar` or just open the jar itself.
+
+As of ChestTracker 1.1.0, it will generate config.yaml when you use it.
+
+## Config
+
+The configuration file looks like this:
+```yaml
+# Seconds between requests; Should be over 300s due to how API updates.
+interval: 300
+# List of users to track
+players: ["Player", "Array"]
+# Should it notify you when a player's logs on / off?
+trackOnline: false
+# Should it notify you when a player reaches 30/60/90/120 chests?
+trackChests: true
+```
 
 ##Info when using
 

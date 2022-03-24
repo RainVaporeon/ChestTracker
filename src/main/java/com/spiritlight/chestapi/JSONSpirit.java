@@ -18,7 +18,7 @@ public class JSONSpirit {
         JSONObject meta = base.getJSONObject("meta"); // location of (bool)online and (String)server || null (Offline)
         JSONObject global = base.getJSONObject("global"); // (int)chestsFound
         JSONObject location = meta.getJSONObject("location");
-        Long timestamp = root.getLong("timestamp"); // Timestamp is in milliseconds
+        long timestamp = root.getLong("timestamp"); // Timestamp is in milliseconds
         int responseCode = root.getInt("code");
         // Checks for world, null for offline
         currentWorld = location.get("server");

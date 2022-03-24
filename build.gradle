@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'org.example'
-version '1.0.1'
+version '1.1.0'
 
 repositories {
     mavenCentral()
@@ -16,7 +16,6 @@ dependencies {
     implementation 'org.json:json:20220320'
     // https://mvnrepository.com/artifact/org.yaml/snakeyaml
     implementation 'org.yaml:snakeyaml:1.30'
-    implementation("net.dv8tion:JDA:VERSION")
 }
 
 jar {
