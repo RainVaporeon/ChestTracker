@@ -1,0 +1,8 @@
+# Seconds between requests; Should be over 300s due to how API updates.
+interval: 300
+# List of users to track
+players: ["OriTheSpirit", "Salted"]
+# Should it notify you when a player's logs on / off?
+trackOnline: false
+# Should it notify you when a player reaches 30/60/90/120 chests?
+trackChests: true
