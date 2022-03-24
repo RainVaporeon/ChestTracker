@@ -38,7 +38,7 @@ public class Main {
                     if (data[1] == JSONObject.NULL) {
                         System.out.println("Player " + args[i] + " is offline :: Chest opened: " + data[0] + " Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
                     } else {
-                        System.out.println("Player " + args[i] + " is online on " + data[1] + "  :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+                        System.out.println("Player " + args[i] + " is online on " + data[1] + " :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
                     }
                     /*
                     if ((int) data[3] == 429) {
@@ -64,7 +64,7 @@ public class Main {
                     if (!(playerData[i][2].equals(data[1])) && ran) {
                         if(data[1] == JSONObject.NULL) {
                             System.out.println("User " + args[i] + " has logged off!");
-                        } else if (playerData[i][2] == JSONObject.NULL ) {
+                        } else if (playerData[i][2] == JSONObject.NULL) {
                             System.out.println("User " + args[i] + " has logged on at " + data[1]);
                         } else {
                             System.out.println("User " + args[i] + " changed world! " + playerData[i][2] + " -> " + data[1]);
@@ -72,10 +72,12 @@ public class Main {
                         playerData[i][1] = data[0];
                         System.out.println("Their totaled chest count will also be re-set.");
                         playerData[i][2] = data[1];
-                        playerData[i][3] = false;
+                        playerData[i][3] = 0;
                     }
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("An connection error has occurred while performing this action.");
+                    System.out.println("Please check your internet connection before proceeding.");
+                    util.wait(30000); // 30s
                 }
             }
             if(!ran) {
