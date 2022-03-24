@@ -33,6 +33,6 @@ public class NotificationSpirit {
         trayIcon.setToolTip("System tray icon demo");
         tray.add(trayIcon);
 
-        trayIcon.displayMessage("ChestAPI Notification", msg, MessageType.INFO);
+        trayIcon.displayMessage("ChestTracker Notification", msg, MessageType.INFO);
     }
 }

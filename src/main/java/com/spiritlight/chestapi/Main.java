@@ -34,7 +34,7 @@ public class Main {
                         playerData[i][2] = data[1]; // Last World
                         playerData[i][3] = 0;
                     }
-                    if (data[1].equals("null")) {
+                    if (data[1] == null) {
                         System.out.println("User " + args[i] + " is offline :: Chest opened: " + data[0] + " Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
                     } else {
                         System.out.println("User " + args[i] + " is online on " + data[1] + "  :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
@@ -42,8 +42,6 @@ public class Main {
                     /*
                     if ((int) data[3] == 429) {
                         System.out.println("Hit rate-limit (HTTP ERR 429)");
-                        System.out.println("This program will rest for " + (30 - loopCount) + " minutes.");
-                        util.wait((30-loopCount) * 60000);
                     }
                      */
                     if(((int)data[0] - (int)playerData[i][1]) > 50 && (int)(playerData[i][3]) < 1) {
@@ -63,7 +61,13 @@ public class Main {
                         playerData[i][3] = 4;
                     }
                     if (!(playerData[i][2].equals(data[1])) && ran) {
-                        System.out.println("User " + args[i] + " changed world! " + playerData[i][2] + " -> " + data[1]);
+                        if(data[1] == null) {
+                            System.out.println("User " + args[i] + " has logged off!");
+                        } else if (playerData[i][2] == null ) {
+                            System.out.println("User " + args[i] + " has logged on at " + data[1]);
+                        } else {
+                            System.out.println("User " + args[i] + " changed world! " + playerData[i][2] + " -> " + data[1]);
+                        }
                         playerData[i][1] = data[0];
                         System.out.println("Their totaled chest count will also be re-set.");
                         playerData[i][2] = data[1];
