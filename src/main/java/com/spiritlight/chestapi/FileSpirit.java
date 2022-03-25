@@ -10,7 +10,7 @@ public class FileSpirit {
                     # Seconds between requests; Should be over 300s due to how API updates.
                     interval: 300
                     # List of users to track
-                    players: ["OriTheSpirit", "Salted"]
+                    players: ["Player1", "Player2"]
                     # Should it notify you when a player logged on?
                     trackOnline: false
                     # Should it notify you when a player logged off?
