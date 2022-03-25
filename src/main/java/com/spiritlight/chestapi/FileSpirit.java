@@ -14,7 +14,7 @@ public class FileSpirit {
                     # Should it notify you when a player logged on?
                     trackOnline: false
                     # Should it notify you when a player logged off?
-                    trackOffline = false
+                    trackOffline: false
                     # Should it notify you when a player reaches 30/60/90/120 chests?
                     trackChests: true
                     # Should it notify you when a player switches worlds?

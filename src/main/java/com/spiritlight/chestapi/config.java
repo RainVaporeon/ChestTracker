@@ -29,7 +29,7 @@ public class config {
         return trackSwitch;
     }
 
-    public void settrackSwitch(boolean trackSwitch) {
+    public void setTrackSwitch(boolean trackSwitch) {
         config.trackSwitch = trackSwitch;
     }
 
@@ -45,7 +45,7 @@ public class config {
         return trackOffline;
     }
 
-    public static void setTrackOffline(boolean trackOffline) {
+    public void setTrackOffline(boolean trackOffline) {
         config.trackOffline = trackOffline;
     }
 
