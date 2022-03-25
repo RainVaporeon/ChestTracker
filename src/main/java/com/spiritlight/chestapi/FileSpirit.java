@@ -17,6 +17,8 @@ public class FileSpirit {
                     trackOffline = false
                     # Should it notify you when a player reaches 30/60/90/120 chests?
                     trackChests: true
+                    # Should it notify you when a player switches worlds?
+                    trackSwitch: false
                     """); // Create new config
             newcfg.close();
             System.out.println("A new config has been created.");
