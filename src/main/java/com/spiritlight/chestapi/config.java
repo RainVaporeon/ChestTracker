@@ -25,6 +25,14 @@ public class config {
         config.trackOnline = trackOnline;
     }
 
+    public static boolean isTrackSwitch() {
+        return trackSwitch;
+    }
+
+    public void settrackSwitch(boolean trackSwitch) {
+        config.trackSwitch = trackSwitch;
+    }
+
     public static boolean isTrackChests() {
         return trackChests;
     }
@@ -46,5 +54,5 @@ public class config {
     private static boolean trackOnline;
     private static boolean trackChests;
     private static boolean trackOffline;
-
+    private static boolean trackSwitch;
 }
