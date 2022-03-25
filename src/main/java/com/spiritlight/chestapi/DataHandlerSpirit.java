@@ -6,12 +6,12 @@ public class DataHandlerSpirit {
     public static void handle(int i, String player, Object[] data, Object[][] playerData, boolean ran) {
         NotificationSpirit notify = new NotificationSpirit();
         if (data[1] == JSONObject.NULL) {
-            System.out.println("Player " + player + " is offline :: Chest opened: " + data[0] + " :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+            System.out.println("Player " + player + " is offline :: Timestamp: " + data[2]);
             if(config.isTrackOffline()) {
                 notify.send("Player " + player + " has logged off!");
             }
         } else {
-            System.out.println("Player " + player + " is online on " + data[1] + " :: Chest opened: " + data[0] + " (+" + ((int)data[0] - (int)playerData[i][1]) + ") :: Timestamp: " + data[2] + " (HTTP " + data[3] + ")");
+            System.out.println("Player " + player + " is online on " + data[1] + " :: Session Chests: " + ((int)data[0] - (int)playerData[i][1]) + " :: Timestamp: " + data[2]);
             if(config.isTrackOnline()) {
                 notify.send("Player " + player + " is online on " + data[1] + "!");
             }
@@ -39,14 +39,17 @@ public class DataHandlerSpirit {
         }
         if (!(playerData[i][2].equals(data[1])) && ran) {
             if(data[1] == JSONObject.NULL) {
-                System.out.println("User " + player + " has logged off!");
+                System.out.println("Player " + player + " has logged off!");
             } else if (playerData[i][2] == JSONObject.NULL) {
-                System.out.println("User " + player + " has logged on at " + data[1]);
+                System.out.println("Player " + player + " has logged on at " + data[1]);
             } else {
-                System.out.println("User " + player + " changed world! " + playerData[i][2] + " -> " + data[1]);
+                System.out.println("Player " + player + " changed world! " + playerData[i][2] + " -> " + data[1]);
+                if(config.isTrackSwitch()) {
+                notify.send("Player " + player + " changed world! " + playerData[i][2] + " -> " + data[1]);
+            }
             }
             playerData[i][1] = data[0];
-            System.out.println("Their totaled chest count will also be re-set.");
+            System.out.println("Their session chest count will also be re-set.");
             playerData[i][2] = data[1];
             playerData[i][3] = 0;
         }
