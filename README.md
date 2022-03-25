@@ -15,7 +15,7 @@ Tracks specified players' chest count, on an interval of 5 minutes.
 
 ## How to use
 
-ChestTracker can be used with the command `java -jar ChestAPI-1.1.0.jar`
+ChestTracker can be used with the command `java -jar ChestAPI-VERSION.jar`
 
 If you do not know how to execute that, place the `run.bat` with it.
 
@@ -41,7 +41,7 @@ Since Wynncraft has an API limit of 750 requests/30 minutes, it's advised that y
 
 ## Building
 
-`gradlew clean build` on the base directory.
+`gradlew clean build` on the base directory or run the build.bat
 
 ## Future plans
 
