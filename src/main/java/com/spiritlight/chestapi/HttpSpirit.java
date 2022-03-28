@@ -12,6 +12,9 @@ public class HttpSpirit {
 
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+            return "Error.NPE";
         }
     }
 }
