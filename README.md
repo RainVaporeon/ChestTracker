@@ -1,3 +1,7 @@
+# README BEFORE DOWNLOADING
+
+Since the new API change, this program is no longer able to track a player's chest count.
+
 # ChestTracker
 
 
